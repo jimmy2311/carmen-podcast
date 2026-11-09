@@ -1,0 +1,17 @@
+{
+  "name": "Carmen & The House That Never Sleeps | Local Audio Player",
+  "short_name": "Carmen Podcast",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#090b13",
+  "theme_color": "#14182a",
+  "description": "A family podcast playlist with 45 permanently stored MP3 episodes and no expiring audio links.",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
