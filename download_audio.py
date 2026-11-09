@@ -45,7 +45,10 @@ def save(e):
     target=OUT/('Carmen_S%d_E%02d.mp3'%(season,episode))
     if target.is_file() and target.stat().st_size>15000:
         return {'season':season,'episode':episode,'success':True,'size':target.stat().st_size,'method':'existing'}
-    options=[]
+    # Reuse the previous Render release as a durable fallback when the original Runway links expire.
+    # Render continues serving the prior successful static deploy while the next one builds.
+    hosted='https://carmen-podcast-full.onrender.com/audio/Carmen_S%d_E%02d.mp3'%(season,episode)
+    options=[('previous_release',[hosted])]
     studio=e.get('studioParts') or []
     if len(studio)>1: options.append(('studio_cast',studio))
     narrated=e.get('audio') or []
